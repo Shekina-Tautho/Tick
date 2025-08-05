@@ -20,4 +20,5 @@ function appendTask(event) {
     console.log(tasks);
 }
 
+//try to save to localstorage next
 
