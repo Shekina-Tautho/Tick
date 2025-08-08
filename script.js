@@ -76,7 +76,6 @@ function loadContainers() {
     }
 }
 
-//  restore tasks and containers as soon as page loads
 window.onload = function () {
     let storedTasks = localStorage.getItem("tasks");
     if (storedTasks) tasks = JSON.parse(storedTasks);
