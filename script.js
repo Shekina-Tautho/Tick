@@ -61,7 +61,13 @@ function renderContainer(c) {
 
     let gridDiv = document.createElement('div');
     gridDiv.className = c.gridClass;
-    gridDiv.textContent = c.task;
+
+    let checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+    let span = document.createElement('span');
+    span.textContent = c.task;
+    gridDiv.appendChild(checkbox);
+    gridDiv.appendChild(span);
 
     let delBtn = document.createElement('button');
     delBtn.className = c.deleteClass;
@@ -105,7 +111,3 @@ window.onload = function () {
 };
 
 
-//next: delete button per card
-//first: render delete button inside card
-//second: add onclick event to delbtn, 
-// delete key associated to container & task from local storage
