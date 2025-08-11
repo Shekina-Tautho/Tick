@@ -11,7 +11,7 @@ function appendTask(event) {
 
     let createdContainer = {
         task: inputValue,
-        completed: false, // Track checked state here
+        completed: false,   
         rowClass: "row",
         gridClass: "col-md-4 bg-info",
         deleteText: "Delete",
@@ -47,6 +47,7 @@ function renderContainer(c) {
 
     let span = document.createElement('span');
     span.textContent = c.task;
+    span.setAttribute("contenteditable", "true");
     if (c.completed) {
         span.classList.add(c.spanClass);
     }
