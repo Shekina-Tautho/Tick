@@ -47,7 +47,7 @@ function renderContainer(c) {
 
     let span = document.createElement('span');
     span.textContent = c.task;
-    span.setAttribute("contenteditable", "true");
+    span.setAttribute("contenteditable", "true");       
     if (c.completed) {
         span.classList.add(c.spanClass);
     }
