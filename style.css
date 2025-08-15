@@ -1,3 +1,29 @@
 body {
     background-color: #040737;
+    font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    color: #B287F6;
+    font-weight: bolder;
+    text-shadow: 0 0 5px #B287F6;
+}
+
+#body-outline {
+    border-style: solid;
+    border-color: #1316B0;
+    border-width: 2px;
+    border-radius: 12px;
+    padding: 2rem;
+    
+}
+
+input {
+    padding: 8px;
+    border: 1px solid #071156;
+    border-radius: 5px;
+    outline: none;
+    background-color: #040737;
+    color: #B8C5F7;
+    width: 400px;
 }

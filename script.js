@@ -27,13 +27,15 @@ function appendTask(event) {
     inputElement.value = '';
 }
 
-// Save containers to localStorage
+
 function saveContainers() {
     localStorage.setItem("containers", JSON.stringify(containers));
 }
 
-// Render a single container
+
 function renderContainer(c) {
+    let bodyOutline = document.getElementById("body-outline");
+
     let rowDiv = document.createElement('div');
     rowDiv.className = c.rowClass;
 
@@ -62,12 +64,11 @@ function renderContainer(c) {
     gridDiv.appendChild(delBtn);
 
     rowDiv.appendChild(gridDiv);
-    document.body.appendChild(rowDiv);
-
-    // Delete handler
+    bodyOutline.appendChild(rowDiv);
+    
     delBtn.addEventListener('click', handleDelete);
 
-    // Checkbox handler
+   
     checkbox.addEventListener('change', function (event) {
         let uuid = event.currentTarget.dataset.uuid;
         containers[uuid].completed = event.currentTarget.checked;
@@ -82,7 +83,7 @@ function renderContainer(c) {
     });
 }
 
-// Handle delete
+
 function handleDelete(event) {
     let uuid = event.currentTarget.dataset.uuid;
     delete containers[uuid];
@@ -90,7 +91,7 @@ function handleDelete(event) {
     event.target.closest('div').remove();
 }
 
-// Load containers from localStorage
+
 function loadContainers() {
     let stored = localStorage.getItem('containers');
     if (stored) {
@@ -101,9 +102,8 @@ function loadContainers() {
     }
 }
 
-// On page load
+
 window.onload = function () {
     loadContainers();
 };
 
-//next: edit task
