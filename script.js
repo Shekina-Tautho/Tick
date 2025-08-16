@@ -42,12 +42,24 @@ function renderContainer(c) {
     gridDiv.className = c.gridClass;
     gridDiv.classList.add('d-flex', 'align-items-center', 'justify-content-center');
 
+    let custom = document.createElement('label');
+    custom.className = 'custom-checkbox';
+
+    let newCheckbox = document.createElement('input');
+    newCheckbox.type = 'checkbox';
+    let newSpan = document.createElement('span');
+    newSpan.className = "checkmark";
+    custom.appendChild(newCheckbox);
+    custom.appendChild(newSpan);
+
+    /*
     let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.dataset.uuid = c.uuid;
     checkbox.checked = c.completed; 
     checkbox.classList.add('col-2');
     checkbox.classList.add('boxx');
+    */
 
     let span = document.createElement('span');
     span.textContent = c.task;
@@ -58,7 +70,7 @@ function renderContainer(c) {
         span.classList.add(c.spanClass);
     }
 
-    gridDiv.appendChild(checkbox);
+    gridDiv.appendChild(custom);
     gridDiv.appendChild(span);
 
     let delBtn = document.createElement('button');

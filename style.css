@@ -69,11 +69,20 @@ input {
     color: #B287F6;
 }
 
+#add:hover {
+    background-color: #7F67FB;
+    color: white;
+}
+
 .span-container {
     display: inline-block;
     width: 22rem;   
     height: 3rem;    
     margin-right: 0.5rem;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;       
 }
 
 button i {
@@ -86,4 +95,33 @@ button i {
     background-color: #040737;
     color: #B8C5F7;
     border: none;
+}
+
+.custom-checkbox input[type="checkbox"] {
+    display: none;
+}
+
+.custom-checkbox .checkmark {
+    display: inline-block;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: 0.5rem; 
+    background-color: #040737;
+    border:1px solid #0D1A8B;
+    border-radius: 4px;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 0.3rem;
+    width: 0.8rem;
+    height: 1.8rem;
+    border: solid #B287F6;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
 }
