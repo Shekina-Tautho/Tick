@@ -9,14 +9,14 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="container d-flex align-items-center justify-content-center min-vh-100">
-  <div id="body-outline">
-    <div class="row">
-      <h1 class="text-center" id="title">Tick</h1>
-      <form>
-          <input type="text" placeholder="Enter a task" id="task"/>
-          <button class="btn btn-primary" onclick=appendTask(event)>Add</button>
-      </form>
-    </div>
+  <div id="body-outline" class="text-center">
+    <h1 id="title">Tick</h1>
+    <form class="col-10 mx-auto d-flex gap-2 w-75">
+      <input type="text" class="w-100 p-2 mb-3 border-rounded" placeholder="Enter a task" id="task"/>
+      <button class="btn btn-primary" onclick="appendTask(event)">Add</button>
+    </form>
+  </div>
+
   </div>
     <script src="script.js"></script>
 </body>

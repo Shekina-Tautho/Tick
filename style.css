@@ -24,6 +24,20 @@ input {
     border-radius: 5px;
     outline: none;
     background-color: #040737;
-    color: #B8C5F7;
+    color: #B8C5F7;     
+}
+
+#task-container {
+    border: 1px solid #071156;
+    border-radius: 5px;
+    background-color: #040737;
+    color: white;
     width: 400px;
 }
+
+.boxx {
+    border: 1px solid #0D1A8B;
+    background-color: #040737   ;
+}
+
+

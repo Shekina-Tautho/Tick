@@ -13,7 +13,7 @@ function appendTask(event) {
         task: inputValue,
         completed: false,   
         rowClass: "row",
-        gridClass: "col-md-4 bg-info",
+        gridClass: "col",
         deleteText: "Delete",
         deleteClass: "btn btn-danger",
         uuid: UUID,
@@ -32,23 +32,37 @@ function saveContainers() {
     localStorage.setItem("containers", JSON.stringify(containers));
 }
 
+/*
+<div class="row">
+    <div class="col-12">
+        <input type="checkbox" class="col-2 ">
+        <span class=""
+    </div>
+</div>
+
+*/
+
+
 
 function renderContainer(c) {
     let bodyOutline = document.getElementById("body-outline");
+    bodyOutline.classList.add('p-4');
 
     let rowDiv = document.createElement('div');
     rowDiv.className = c.rowClass;
-
     let gridDiv = document.createElement('div');
     gridDiv.className = c.gridClass;
 
     let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
     checkbox.dataset.uuid = c.uuid;
-    checkbox.checked = c.completed; // Restore checked state
+    checkbox.checked = c.completed; 
+    checkbox.classList.add('col-2');
+    checkbox.classList.add('boxx');
 
     let span = document.createElement('span');
     span.textContent = c.task;
+    span.id = 'task-container'
     span.setAttribute("contenteditable", "true");       
     if (c.completed) {
         span.classList.add(c.spanClass);
@@ -107,3 +121,4 @@ window.onload = function () {
     loadContainers();
 };
 
+//issue: span containing the task is not expanded
