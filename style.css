@@ -85,6 +85,18 @@ input {
     padding-left: 0.5rem;       
 }
 
+.glowContainer {
+    display: inline-block;
+    width: 22rem;   
+    height: 3rem;    
+    margin-right: 0.5rem;
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;   
+    box-shadow: 0 0 2px 1px #7F67FB;    
+}
+
 button i {
     font-size: 1.3rem;
 }
@@ -114,14 +126,32 @@ button i {
     cursor: pointer;
 }
 
+.ticked .checkmark {
+    display: inline-block;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: 0.5rem; 
+    background-color: #040737;
+    border:1px solid #7F67FB;
+    box-shadow: 0 0 1px 1px #7F67FB;
+    border-radius: 4px;
+    vertical-align: middle;
+    position: relative;
+    cursor: pointer;
+}
+
 .custom-checkbox input:checked + .checkmark::after {
     content: "";
     position: absolute;
-    left: 1rem;
-    top: 0.3rem;
+    left: 0.9rem;   
+    top: 0.4rem;    
     width: 0.8rem;
-    height: 1.8rem;
+    height: 1.5rem;
     border: solid #B287F6;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
+
+    filter: drop-shadow(0 0 0.5px #B287F6)
+            drop-shadow(0 0 1.5px #B287F6)
+            drop-shadow(0 0 2.5px #B287F6);
 }

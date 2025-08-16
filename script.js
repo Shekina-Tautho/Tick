@@ -17,7 +17,6 @@ function appendTask(event) {
         deleteText: "Delete",
         deleteClass: "btn btn-danger",
         uuid: UUID,
-        spanClass: "text-decoration-line-through"
     };
 
     containers[UUID] = createdContainer;
@@ -40,39 +39,40 @@ function renderContainer(c) {
     let rowDiv = document.createElement('div');
     let gridDiv = document.createElement('div');
     gridDiv.className = c.gridClass;
-    gridDiv.classList.add('d-flex', 'align-items-center', 'justify-content-center');
+    gridDiv.classList.add('d-flex', 'align-items-center', 'justify-content-center', 'gap-2');
+
 
     let custom = document.createElement('label');
     custom.className = 'custom-checkbox';
 
-    let newCheckbox = document.createElement('input');
-    newCheckbox.type = 'checkbox';
-    let newSpan = document.createElement('span');
-    newSpan.className = "checkmark";
-    custom.appendChild(newCheckbox);
-    custom.appendChild(newSpan);
+    let customInput = document.createElement('input');
+    customInput.type = 'checkbox';
+    customInput.dataset.uuid = c.uuid; 
+    customInput.checked = c.completed; 
 
-    /*
-    let checkbox = document.createElement('input');
-    checkbox.type = "checkbox";
-    checkbox.dataset.uuid = c.uuid;
-    checkbox.checked = c.completed; 
-    checkbox.classList.add('col-2');
-    checkbox.classList.add('boxx');
-    */
+    let checkmark = document.createElement('span');
+    checkmark.className = "checkmark";
 
+    custom.appendChild(customInput);
+    custom.appendChild(checkmark);
+
+    
     let span = document.createElement('span');
     span.textContent = c.task;
     span.id = 'task-container';
     span.classList.add('span-container');
     span.setAttribute("contenteditable", "true");       
     if (c.completed) {
-        span.classList.add(c.spanClass);
+        custom.classList.add('ticked');
+        span.classList.add('done');
+        span.classList.add('glowContainer');
+    } else {
+        custom.classList.remove('ticked');
+        span.classList.remove('done');
+        span.classList.remove('glowContainer');
     }
 
-    gridDiv.appendChild(custom);
-    gridDiv.appendChild(span);
-
+   
     let delBtn = document.createElement('button');
     delBtn.classList.add('del');
     delBtn.dataset.uuid = c.uuid;
@@ -81,27 +81,34 @@ function renderContainer(c) {
     icon.classList.add('fa-solid', 'fa-trash'); 
     delBtn.appendChild(icon);
 
-    gridDiv.appendChild(delBtn);
 
+    gridDiv.appendChild(custom);
+    gridDiv.appendChild(span);
+    gridDiv.appendChild(delBtn);
     rowDiv.appendChild(gridDiv);
     bodyOutline.appendChild(rowDiv);
-    
-    delBtn.addEventListener('click', handleDelete);
 
-   
-    checkbox.addEventListener('change', function (event) {
+
+    customInput.addEventListener('change', function (event) {
         let uuid = event.currentTarget.dataset.uuid;
         containers[uuid].completed = event.currentTarget.checked;
-        
+
         if (event.currentTarget.checked) {
-            span.classList.add(containers[uuid].spanClass);
+            span.classList.add('done');
+            custom.classList.add('ticked');
+            span.classList.add('glowContainer');
         } else {
-            span.classList.remove(containers[uuid].spanClass);
+            span.classList.remove('done');
+            custom.classList.remove('ticked');
+            span.classList.remove('glowContainer');
         }
-        
+
         saveContainers();
     });
+
+    delBtn.addEventListener('click', handleDelete);
 }
+
 
 
 function handleDelete(event) {
