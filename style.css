@@ -9,6 +9,19 @@ h1 {
     text-shadow: 0 0 5px #B287F6;
 }
 
+@media (min-width: 576px) and (max-width: 767.08px) {
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199.08px) {
+    h1 {
+        font-size: 2.7rem;
+    }
+}
+
+
 #body-outline {
     border-style: solid;
     border-color: #1316B0;
@@ -25,6 +38,8 @@ input {
     outline: none;
     background-color: #040737;
     color: #B8C5F7;     
+    height: 2.7rem;
+    font-size: large;
 }
 
 #task-container {
@@ -38,6 +53,11 @@ input {
 .boxx {
     border: 1px solid #0D1A8B;
     background-color: #040737   ;
+}
+
+#add {
+    width: 4rem;
+    height: 2.7rem;
 }
 
 

@@ -8,12 +8,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="container d-flex align-items-center min-vh-100">
-  <div id="body-outline">
+<body class="container d-flex align-items-center justify-content-center min-vh-100">
+  <div id="body-outline" class="col-sm-10 col-md-6 col-lg-6 col-xl-6 col-xxl-6">
     <h1 id="title" class="text-center">Tick</h1>
     <form class="col-10 mx-auto d-flex gap-2 w-75 justify-content-center">
       <input type="text" class="w-100 p-2 mb-3 border-rounded" placeholder="Enter a task" id="task"/>
-      <button class="btn btn-primary" onclick="appendTask(event)">Add</button>
+      <button class="btn btn-primary" onclick="appendTask(event)" id="add"></button>
     </form>
   </div>
 
