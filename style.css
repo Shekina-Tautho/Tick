@@ -33,7 +33,7 @@ h1 {
 
 input {
     padding: 8px;
-    border: 1px solid #071156;
+    border: none;
     border-radius: 5px;
     outline: none;
     background-color: #040737;
@@ -42,22 +42,48 @@ input {
     font-size: large;
 }
 
+
+*:focus {
+    outline: none;
+}
+
 #task-container {
     border: 1px solid #071156;
     border-radius: 5px;
     background-color: #040737;
-    color: white;
-    width: 400px;
+    color: #B8C5F7;
 }
 
 .boxx {
-    border: 1px solid #0D1A8B;
-    background-color: #040737   ;
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-right: 0.5rem;
 }
 
 #add {
     width: 4rem;
     height: 2.7rem;
+    background-color: none;
+    border: 0.5px solid #7F67FB;
+    box-shadow: 0 0 1px 1px #7F67FB;
+    color: #B287F6;
 }
 
+.span-container {
+    display: inline-block;
+    width: 22rem;   
+    height: 3rem;    
+    margin-right: 0.5rem;
+}
 
+button i {
+    font-size: 1.3rem;
+}
+
+.del {
+    width: 3rem;
+    height: 3rem;
+    background-color: #040737;
+    color: #B8C5F7;
+    border: none;
+}

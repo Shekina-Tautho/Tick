@@ -11,7 +11,7 @@ function appendTask(event) {
 
     let createdContainer = {
         task: inputValue,
-        completed: false,   
+        completed: false,       
         rowClass: "row",
         gridClass: "col",
         deleteText: "Delete",
@@ -32,26 +32,15 @@ function saveContainers() {
     localStorage.setItem("containers", JSON.stringify(containers));
 }
 
-/*
-<div class="row">
-    <div class="col-12">
-        <input type="checkbox" class="col-2 ">
-        <span class=""
-    </div>
-</div>
-
-*/
-
-
 
 function renderContainer(c) {
     let bodyOutline = document.getElementById("body-outline");
     bodyOutline.classList.add('p-4');
 
     let rowDiv = document.createElement('div');
-    rowDiv.className = c.rowClass;
     let gridDiv = document.createElement('div');
     gridDiv.className = c.gridClass;
+    gridDiv.classList.add('d-flex', 'align-items-center', 'justify-content-center');
 
     let checkbox = document.createElement('input');
     checkbox.type = "checkbox";
@@ -62,7 +51,8 @@ function renderContainer(c) {
 
     let span = document.createElement('span');
     span.textContent = c.task;
-    span.id = 'task-container'
+    span.id = 'task-container';
+    span.classList.add('span-container');
     span.setAttribute("contenteditable", "true");       
     if (c.completed) {
         span.classList.add(c.spanClass);
@@ -72,9 +62,13 @@ function renderContainer(c) {
     gridDiv.appendChild(span);
 
     let delBtn = document.createElement('button');
-    delBtn.className = c.deleteClass;
-    delBtn.textContent = c.deleteText;
+    delBtn.classList.add('del');
     delBtn.dataset.uuid = c.uuid;
+
+    let icon = document.createElement('i');
+    icon.classList.add('fa-solid', 'fa-trash'); 
+    delBtn.appendChild(icon);
+
     gridDiv.appendChild(delBtn);
 
     rowDiv.appendChild(gridDiv);
@@ -120,5 +114,3 @@ function loadContainers() {
 window.onload = function () {
     loadContainers();
 };
-
-//issue: span containing the task is not expanded
