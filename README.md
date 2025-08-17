@@ -22,6 +22,8 @@ Designed as a practice project to explore **Bootstrap’s grid system** and fron
 
 ## Tick Preview
 <img width="1817" height="860" alt="image" src="https://github.com/user-attachments/assets/334ae10c-7140-4a1e-a7ee-ec6a43752d54" />
+<img width="453" height="859" alt="image" src="https://github.com/user-attachments/assets/5e180f77-3578-4940-88c1-fcf0f12e0039" />
+
 
 
 
