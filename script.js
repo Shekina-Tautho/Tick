@@ -72,6 +72,13 @@ function renderContainer(c) {
         span.classList.remove('glowContainer');
     }
 
+    span.addEventListener("input", function () {
+    let uuid = c.uuid;  
+    containers[uuid].task = span.textContent;  
+    saveContainers();  
+    });
+
+
    
     let delBtn = document.createElement('button');
     delBtn.classList.add('del');
