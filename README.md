@@ -18,7 +18,10 @@ Designed as a practice project to explore **Bootstrap’s grid system** and fron
 - **JavaScript (ES6)** – logic & local storage handling  
 
 
-  
-You can try the it here:  
+## [You can try it here](https://tick-cyan.vercel.app/)
+
+## Tick Preview
+<img width="1817" height="860" alt="image" src="https://github.com/user-attachments/assets/334ae10c-7140-4a1e-a7ee-ec6a43752d54" />
+
 
 
